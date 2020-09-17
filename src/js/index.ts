@@ -4,18 +4,22 @@ new Vue({
     // which is included at the bottom of the html file.
     el: "#app",
     data: {
-        name: "",
-        greeting: ""
+        word: "",
+        collection: "",
+        words: []
     },
     methods: {
-        sayHello() {
-            console.log("Say Hello " + this.name)
-            if (this.name == "") {
-                this.greeting = "Hello NoName"
-            }
-            else {
-                this.greeting = "Hello " + this.name
-            }
+        save() {
+            console.log(this.word.toString())
+            this.words.push(this.word)
+        },
+        show() {
+            this.collection = this.words   
+        },
+        clear() {
+            this.words = []
+            console.log(this.words.toString())
+            this.collection = ""
         }
     }
 })
